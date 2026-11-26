@@ -2,10 +2,17 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import fs from 'fs';
 import path from 'path';
+import {fileURLToPath} from 'url';
 import {defineConfig} from 'vite';
+
+// Ensures __dirname works cleanly in modern ESM environments
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default defineConfig(() => {
   return {
+    // Ensures assets resolve properly from the root path
+    base: '/',
     plugins: [
       react(),
       tailwindcss(),
@@ -30,7 +37,9 @@ export default defineConfig(() => {
     ],
     resolve: {
       alias: {
+        // Keeps '@' mapped to root, plus adds '@src' for cleaner src imports
         '@': path.resolve(__dirname, '.'),
+        '@src': path.resolve(__dirname, 'src'),
       },
     },
     server: {
