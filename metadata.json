@@ -1,0 +1,6 @@
+{
+  "name": "Secret Garden — The Mystery of the Lost Bloom",
+  "description": "An interactive botanical K-Way Merge and Linked List garden experience that consolidates five department bloom queues into one chronological master timeline.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
